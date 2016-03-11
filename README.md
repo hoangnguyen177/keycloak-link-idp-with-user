@@ -1,13 +1,13 @@
 # Keycloak: Link IdP Login with User Provider
 
-When using an external identity provider, Keycloak will, by default, ask
-the user if they would like to link their IdP login with an existing account,
-if one exists. When the external identity provider is an enterprise
-SSO solution linked to an enterprise user directory with which Keycloak
-is federated, these additional prompts are undesirable and confusing to
-users. This small authentication provider can be dropped into a flow to
-automatically link an IdP login with an existing user, federated or otherwise,
-without prompting the user.
+When using an external identity provider, [Keycloak](https://keycloak.jboss.org)
+will, by default, ask the user if they would like to link their IdP login
+with an existing account, if one exists. When the external identity provider
+is an enterprise SSO solution linked to an enterprise user directory with
+which Keycloak is federated, these additional prompts are undesirable and
+confusing to users. This small authentication provider can be dropped into a
+flow to automatically link an IdP login with an existing user, federated or
+otherwise, without prompting the user.
 
 ## Usage
 1. Download a release jar or build with maven: `mvn package`.
