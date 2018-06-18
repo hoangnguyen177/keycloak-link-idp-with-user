@@ -1,3 +1,5 @@
+![Project unmaintained](https://img.shields.io/badge/project-unmaintained-red.svg)
+
 # Keycloak: Link IdP Login with User Provider
 
 When using an external identity provider, [Keycloak](https://keycloak.jboss.org)
