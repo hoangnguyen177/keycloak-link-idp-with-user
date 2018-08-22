@@ -22,11 +22,11 @@ package edu.ohio.ais.keycloak.authentication;
 import org.keycloak.authentication.AuthenticationFlowContext;
 import org.keycloak.authentication.AuthenticationFlowError;
 import org.keycloak.authentication.Authenticator;
+
 import org.keycloak.authentication.authenticators.broker.AbstractIdpAuthenticator;
 import org.keycloak.models.KeycloakSession;
 import org.keycloak.models.RealmModel;
 import org.keycloak.models.UserModel;
-import org.keycloak.services.ServicesLogger;
 
 /**
  * Automatically link the logged in account with an existing
@@ -35,11 +35,11 @@ import org.keycloak.services.ServicesLogger;
  * @author Ilya Kogan
  */
 public class LinkIdpLoginAuthenticator implements Authenticator {
-    protected static ServicesLogger logger = ServicesLogger.ROOT_LOGGER;
-
+    
     public void authenticate(AuthenticationFlowContext context) {
-        logger.debug("Auto-linking IdP login to federated identity.");
-        UserModel existingUser = AbstractIdpAuthenticator.getExistingUser(context.getSession(), context.getRealm(), context.getClientSession());
+        System.out.println("Auto-linking IdP login to federated identity.");
+        UserModel existingUser = AbstractIdpAuthenticator.getExistingUser(
+        		context.getSession(), context.getRealm(), context.getAuthenticationSession());
 
         if(existingUser != null) {
             context.setUser(existingUser);
